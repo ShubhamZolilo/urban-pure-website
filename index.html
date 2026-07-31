@@ -40,8 +40,8 @@
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.5-.6-2.7-1.2-4.4-3.9-4.6-4.1-.1-.2-1-1.4-1-2.6s.6-1.8.9-2.1c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.3 0 .5l-.3.5-.3.3c-.1.1-.3.3-.1.6.2.3.7 1.2 1.6 2 1.1 1 2 1.3 2.3 1.4.3.1.4.1.6-.1l.9-1c.2-.2.3-.2.6-.1l1.8.9c.3.1.4.2.5.3.1.2.1.7-.1 1.3z"/></svg>
       WhatsApp Us</a>
     <a class="btn btn--blue" href="tel:+919147097231">Call Now</a>
-    <button class="burger" id="drawer-open" type="button" aria-expanded="false" aria-controls="drawer">
-      <span aria-hidden="true"></span> Menu
+    <button class="burger" id="drawer-open" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Menu">
+      <span aria-hidden="true"></span>
     </button>
   </div>
 </header>
@@ -53,6 +53,16 @@
     <a href="#why">Why Us</a>
     <a href="#how">How It Works</a>
     <a href="#visit">Store Location</a>
+
+    <!-- The bar has no room for the call and WhatsApp buttons on a phone, so
+         they live here instead. -->
+    <div class="drawer__cta">
+      <a class="btn btn--blue btn--lg" href="tel:+919147097231">Call Now</a>
+      <a class="btn btn--wa btn--lg" href="https://wa.me/918431194198?text=Hi%20Zolilo%2C%20Urban%20Pure%20here.%20I%20am%20interested%20in%20the%20website." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.5-.6-2.7-1.2-4.4-3.9-4.6-4.1-.1-.2-1-1.4-1-2.6s.6-1.8.9-2.1c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.3 0 .5l-.3.5-.3.3c-.1.1-.3.3-.1.6.2.3.7 1.2 1.6 2 1.1 1 2 1.3 2.3 1.4.3.1.4.1.6-.1l.9-1c.2-.2.3-.2.6-.1l1.8.9c.3.1.4.2.5.3.1.2.1.7-.1 1.3z"/></svg>
+        WhatsApp Us</a>
+    </div>
+
     <p class="drawer__meta">+91 91470 97231<br>Open daily till 7:00 PM</p>
   </div>
 </div>
