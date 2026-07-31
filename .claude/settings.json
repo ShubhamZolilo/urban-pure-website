@@ -25,7 +25,10 @@
       "PowerShell(git config --global user.name)",
       "PowerShell(git config --global user.email)",
       "PowerShell(git init -b main)",
-      "PowerShell(git add -A)"
+      "PowerShell(git add -A)",
+      "PowerShell($env:GIT_REDIRECT_STDERR = '2>&1'; git -C \"e:\\\\ZOLILO\\\\urban pure\" remote remove origin 2>$null; git -C \"e:\\\\ZOLILO\\\\urban pure\" remote add origin https://github.com/ShubhamZolilo/urban-pure-website.git; git -C \"e:\\\\ZOLILO\\\\urban pure\" ls-remote origin)",
+      "PowerShell(git -C \"e:\\\\ZOLILO\\\\urban pure\" remote -v; \"---\"; git -C \"e:\\\\ZOLILO\\\\urban pure\" ls-remote origin; \"exit=$LASTEXITCODE\")",
+      "PowerShell(git -C \"e:\\\\ZOLILO\\\\urban pure\" push -u origin main)"
     ],
     "deny": [
       "Read(//e/ZOLILO CODES/**)",

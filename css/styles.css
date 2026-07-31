@@ -25,7 +25,6 @@ svg { fill: currentColor; }
   --card:        #FFFFFF;
   --card-hero:   #FFFFFF;
   --card-product:#FFFFFF;
-  --card-service:#FFFFFF;
   --card-why:    #FFFFFF;
 
   /* Two blues. --blue is dark enough to sit on white as text and still pass
@@ -389,40 +388,6 @@ body {
 
 .tile__go { margin-top: auto; padding-top: .95rem; font-size: .82rem; font-weight: 600; color: var(--blue); }
 
-/* ── Service list ───────────────────────────────────────────────────────── */
-
-.services__lede { color: var(--dim); max-width: 42ch; margin-top: .9rem; margin-bottom: clamp(2rem, 5vh, 3rem); }
-
-.scards { display: grid; grid-template-columns: repeat(5, 1fr); gap: clamp(.7rem, 1.4vw, 1.1rem); }
-
-.scard {
-  display: flex; flex-direction: column;
-  padding: 1.35rem 1.3rem 1.25rem;
-  background: var(--card-service); box-shadow: var(--shadow);
-  border: 1px solid var(--line); border-radius: var(--r);
-  transition: transform .3s, box-shadow .3s, border-color .3s;
-}
-.scard:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: rgba(14,119,196,.3); }
-
-/* Two lines of title reserved, so the descriptions start on the same line right
-   across a row however long each service name runs. */
-.scard__top { display: flex; align-items: flex-start; gap: .8rem; min-height: 96px; margin-bottom: .9rem; }
-.scard__ico {
-  display: grid; place-items: center; flex: none;
-  width: 44px; height: 44px; border-radius: 50%;
-  background: rgba(14,119,196,.1); color: var(--blue);
-}
-/* Line icons, so the global fill rule has to be turned off here. */
-.scard__ico svg {
-  width: 22px; height: 22px;
-  fill: none; stroke: currentColor; stroke-width: 1.5;
-  stroke-linecap: round; stroke-linejoin: round;
-}
-.scard__top h3 { font-size: .95rem; font-weight: 700; line-height: 1.3; }
-.scard > p { font-size: .85rem; line-height: 1.6; color: var(--dim); }
-.scard__go { margin-top: auto; padding-top: 1.1rem; font-size: .82rem; font-weight: 600; color: var(--blue); text-decoration: none; }
-.scard__go:hover { color: var(--blue2); }
-
 /* ── How it works ───────────────────────────────────────────────────────── */
 
 .how { display: grid; grid-template-columns: .82fr 1.4fr; gap: clamp(1.5rem, 3.5vw, 3rem); align-items: start; }
@@ -569,7 +534,6 @@ body {
 
 @media (max-width: 1080px) {
   .grid--4 { grid-template-columns: repeat(2, 1fr); }
-  .scards { grid-template-columns: repeat(3, 1fr); }
   .how { grid-template-columns: 1fr; }
   .foot__grid { grid-template-columns: repeat(3, 1fr); }
 }
@@ -595,8 +559,6 @@ body {
   .stack { grid-template-columns: repeat(3, 1fr); row-gap: 1.5rem; }
   .stack::before { display: none; }
   .stage { opacity: 1; }
-  .scards { grid-template-columns: repeat(2, 1fr); }
-  .scard__top { min-height: 0; }
 }
 
 @media (max-width: 620px) {
@@ -613,7 +575,6 @@ body {
 
 @media (max-width: 420px) {
   .grid, .grid--4 { grid-template-columns: 1fr; }
-  .scards { grid-template-columns: 1fr; }
   .stack { grid-template-columns: repeat(2, 1fr); }
   .visit__details { grid-template-columns: 1fr; }
 }
@@ -626,7 +587,7 @@ body {
     transition-duration: .001ms !important; scroll-behavior: auto !important;
   }
   #caustics { display: none; }
-  .btn:hover, .tile:hover, .scard:hover { transform: none; }
+  .btn:hover, .tile:hover { transform: none; }
   .stage { opacity: 1; }
   /* The product settles into place immediately and stops moving. The bubbles
      serve no purpose without motion, so they go entirely. */
