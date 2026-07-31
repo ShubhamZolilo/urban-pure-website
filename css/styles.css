@@ -580,12 +580,28 @@ body {
   .specs { grid-template-columns: 1fr; }
   .foot__grid { grid-template-columns: repeat(2, 1fr); }
   .visit__actions { flex-direction: column; }
+  /* Mobile: the copy column is centred. The two max-width blocks need an auto
+     inline margin or they stay pinned left inside a centred column. */
+  .hero__copy { text-align: center; }
+  /* The headline stays ranged left against the gutter; only the supporting copy
+     and the buttons centre. */
+  .hero__title { text-align: left; }
+  .hero__lede, .hero__trust { margin-inline: auto; }
+  .hero__lede { font-size: .92rem; line-height: 1.55; margin-bottom: 1.6rem; }
   /* The two hero buttons stay side by side and split the row. The arrow goes so
      "Explore Products" still fits on one line at 360px. */
-  .hero__cta { flex-wrap: nowrap; gap: .6rem; }
+  .hero__cta { flex-wrap: nowrap; gap: .6rem; justify-content: center; }
   .hero__cta .btn { flex: 1 1 0; min-width: 0; }
   .hero__cta .btn--lg { padding: .9rem .7rem; font-size: .88rem; }
   .hero__cta .btn span[aria-hidden] { display: none; }
+  /* The banner's two buttons pair up the same way. "Chat on WhatsApp" is too
+     long to keep its icon in half a phone width, and the green already says
+     WhatsApp. Wrapping is left on as a floor for very narrow screens — the row
+     stretches both buttons to match, so a second line costs nothing. */
+  .cta__actions { flex-wrap: nowrap; gap: .6rem; }
+  .cta__actions .btn { flex: 1 1 0; min-width: 0; white-space: normal; text-align: center; line-height: 1.35; }
+  .cta__actions .btn--lg { padding: .9rem .6rem; font-size: .85rem; }
+  .cta__actions .btn svg { display: none; }
   /* Mobile: centred, about 80% wide. */
   .hero-product { width: 80%; }
   .hero__glow { width: 90%; }
