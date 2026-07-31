@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Urban Pure | Aquaguard and Eureka Forbes in Newtown, Kolkata</title>
+<meta name="description" content="Eureka Forbes Premium Partner in Newtown, Kolkata. Water purifiers, air purifiers, vacuum cleaners, robotic cleaners and kitchen chimneys. Sold, installed and serviced. Come see them running.">
+<meta name="theme-color" content="#050A14">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 3c5 7 8 11 8 15a8 8 0 0 1-16 0c0-4 3-8 8-15z' fill='%2338BDF8'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- Ambient water light. Decorative only. If the canvas never starts, the CSS
+     gradients underneath carry the page unchanged. -->
+<div id="watermark" aria-hidden="true"></div>
+<canvas id="caustics" width="200" height="120" aria-hidden="true"></canvas>
+
+<header class="bar" id="bar">
+  <a class="brand" href="#top">
+    <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3c5 7 8 11 8 15a8 8 0 0 1-16 0c0-4 3-8 8-15z"/></svg>
+    <span class="brand__name">Urban <b>Pure</b></span>
+  </a>
+
+  <nav class="bar__nav" aria-label="Sections">
+    <a href="#products">Products</a>
+    <a href="#services">Services</a>
+    <a href="#why">Why Us</a>
+    <a href="#how">How It Works</a>
+    <a href="#visit">Store Location</a>
+  </nav>
+
+  <div class="bar__actions">
+    <a class="btn btn--wa" href="https://wa.me/918431194198?text=Hi%20Zolilo%2C%20Urban%20Pure%20here.%20I%20am%20interested%20in%20the%20website." target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.5-.6-2.7-1.2-4.4-3.9-4.6-4.1-.1-.2-1-1.4-1-2.6s.6-1.8.9-2.1c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.3 0 .5l-.3.5-.3.3c-.1.1-.3.3-.1.6.2.3.7 1.2 1.6 2 1.1 1 2 1.3 2.3 1.4.3.1.4.1.6-.1l.9-1c.2-.2.3-.2.6-.1l1.8.9c.3.1.4.2.5.3.1.2.1.7-.1 1.3z"/></svg>
+      WhatsApp Us</a>
+    <a class="btn btn--blue" href="tel:+919147097231">Call Now</a>
+    <button class="burger" id="drawer-open" type="button" aria-expanded="false" aria-controls="drawer">
+      <span aria-hidden="true"></span> Menu
+    </button>
+  </div>
+</header>
+
+<div class="drawer" id="drawer" data-open="false">
+  <div class="drawer__panel" role="dialog" aria-modal="true" aria-label="Menu">
+    <button class="drawer__close" id="drawer-close" type="button">Close</button>
+    <a href="#products">Products</a>
+    <a href="#services">Services</a>
+    <a href="#why">Why Us</a>
+    <a href="#how">How It Works</a>
+    <a href="#visit">Store Location</a>
+    <p class="drawer__meta">+91 91470 97231<br>Open daily till 7:00 PM</p>
+  </div>
+</div>
+
+<main id="main">
+
+  <!-- Hero ---------------------------------------------------------------- -->
+  <section class="hero" id="top">
+    <div class="hero__inner">
+      <div class="hero__copy">
+        <h1 class="hero__title">
+          Water you'll<br>
+          <span class="accent">never</span><br>
+          think<br>
+          about.
+        </h1>
+
+        <p class="hero__lede">
+          Aquaguard and Eureka Forbes: sold, fitted and looked after from one shop
+          in Newtown. Come and see the machines running before you decide.
+        </p>
+
+        <div class="hero__cta">
+          <a class="btn btn--blue btn--lg" href="#products">Explore Products <span aria-hidden="true">→</span></a>
+          <a class="btn btn--ghost btn--lg" href="#visit">Visit the Store</a>
+        </div>
+
+        <p class="hero__trust">
+          <svg viewBox="0 0 24 24" aria-hidden="true" class="ico"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
+          Rated <b>5.0</b> on Google &middot; Premium Partner &amp; Authorised Dealer of
+          Eureka Forbes, an Aquaguard Company
+        </p>
+      </div>
+
+      <!-- Product showcase. Everything except the photograph is decorative and
+           hidden from assistive tech. If the file is not in place yet, main.js
+           drops the whole showcase rather than leaving a broken image. -->
+      <div class="hero__art" id="hero-showcase">
+        <span class="hero__glow" aria-hidden="true"></span>
+        <span class="hero__bubbles" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+        <span class="hero__shadow" aria-hidden="true"></span>
+        <img class="hero-product" id="hero-shot"
+             src="images/aquaguard-hero.png"
+             alt="Aquaguard smart water purifier with 2-year filter life"
+             fetchpriority="high" decoding="async">
+      </div>
+    </div>
+
+    <ul class="specs">
+      <li>
+        <span class="specs__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8 7 6 10.5 6 13a6 6 0 0 0 12 0c0-2.5-2-6-6-11z"/></svg></span>
+        <span><b>RO + UV + UF</b>Every configuration in stock</span>
+      </li>
+      <li>
+        <span class="specs__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l5 5L20 6l-2-2-9 9-3-3z"/></svg></span>
+        <span><b>Genuine warranty</b>Registered with the company</span>
+      </li>
+      <li>
+        <span class="specs__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l8 4v6c0 5-3.4 8.7-8 10-4.6-1.3-8-5-8-10V6z"/></svg></span>
+        <span><b>Premium Partner</b>Appointed by Eureka Forbes</span>
+      </li>
+      <li>
+        <span class="specs__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 2h2v6h-2zM4.2 5.6l1.4-1.4 4.3 4.3-1.5 1.4zM2 11h6v2H2zM18.4 4.2l1.4 1.4-4.3 4.3-1.4-1.5zM16 11h6v2h-6zM11 16h2v6h-2z"/></svg></span>
+        <span><b>Installation &amp; service</b>Fitting, filters and AMC</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Products ------------------------------------------------------------ -->
+  <section class="sec sec--band" id="products">
+    <p class="eyebrow">Our Products</p>
+    <div class="sec__head">
+      <h2 class="sec__title">What we sell and&nbsp;service.</h2>
+    </div>
+
+    <div class="grid" id="product-grid">
+
+      <a class="tile" href="https://wa.me/918431194198?text=Hi%20Zolilo%2C%20Urban%20Pure%20here.%20I%20am%20interested%20in%20the%20website." target="_blank" rel="noopener">
+        <span class="tile__top">
+          <span class="tile__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8 7 6 10.5 6 13a6 6 0 0 0 12 0c0-2.5-2-6-6-11z"/></svg></span>
+          <span class="tile__name"><b>Aquaguard purifiers</b><i>RO, UV, copper and alkaline models. Stylish, smart and secure.</i></span>
+        </span>
+        <span class="tile__art"><img src="assets/img/purifier-aquaguard.png" alt="Aquaguard purifiers at Urban Pure, Newtown" loading="lazy" decoding="async"></span>
+        <span class="tile__go">View all purifiers <span aria-hidden="true">→</span></span>
+      </a>
+
+      <a class="tile" href="https://wa.me/918431194198?text=Hi%20Zolilo%2C%20Urban%20Pure%20here.%20I%20am%20interested%20in%20the%20website." target="_blank" rel="noopener">
+        <span class="tile__top">
+          <span class="tile__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4V1L8 5l4 4V6a6 6 0 1 1-6 6H4a8 8 0 1 0 8-8z"/></svg></span>
+          <span class="tile__name"><b>AMC &amp; annual service</b><i>Keep your purifier performing like day one, with scheduled filter changes.</i></span>
+        </span>
+        <!-- A real photograph, so it fills the frame instead of being blended
+             into the light pool the product cutouts sit in. -->
+        <span class="tile__art tile__art--photo"><img src="image copy.png" alt="Eureka Forbes Genuine Service engineer with a replacement Sedi Shield filter cartridge" loading="lazy" decoding="async"></span>
+        <span class="tile__go">Explore AMC <span aria-hidden="true">→</span></span>
+      </a>
+
+      <a class="tile" href="https://wa.me/918431194198?text=Hi%20Zolilo%2C%20Urban%20Pure%20here.%20I%20am%20interested%20in%20the%20website." target="_blank" rel="noopener">
+        <span class="tile__top">
+          <span class="tile__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="6" width="15" height="2" rx="1"/><rect x="2" y="11" width="20" height="2" rx="1"/><rect x="2" y="16" width="11" height="2" rx="1"/></svg></span>
+          <span class="tile__name"><b>Air purifier</b><i>Cleaner, healthier air every day.</i></span>
+        </span>
+        <span class="tile__art"><img src="assets/img/air-purifier.png" alt="Air purifier at Urban Pure, Newtown" loading="lazy" decoding="async"></span>
+        <span class="tile__go">Enquire <span aria-hidden="true">→</span></span>
+      </a>
+
+      <a class="tile" href="https://wa.me/918431194198?text=Hi%20Zolilo%2C%20Urban%20Pure%20here.%20I%20am%20interested%20in%20the%20website." target="_blank" rel="noopener">
+        <span class="tile__top">
+          <span class="tile__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10l4-5h10l4 5v2H3zM6 14h12v2H6z"/></svg></span>
+          <span class="tile__name"><b>Kitchen chimney</b><i>Powerful suction, clean kitchen.</i></span>
+        </span>
+        <span class="tile__art"><img src="images/image.png" alt="Kitchen chimney at Urban Pure, Newtown" loading="lazy" decoding="async"></span>
+        <span class="tile__go">Enquire <span aria-hidden="true">→</span></span>
+      </a>
+
+      <a class="tile" href="https://wa.me/918431194198?text=Hi%20Zolilo%2C%20Urban%20Pure%20here.%20I%20am%20interested%20in%20the%20website." target="_blank" rel="noopener">
+        <span class="tile__top">
+          <span class="tile__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h16v-2H4zM7 17V9a5 5 0 0 1 10 0v8h-2V9a3 3 0 0 0-6 0v8z"/></svg></span>
+          <span class="tile__name"><b>Vacuum cleaner</b><i>Cordless stick and wet-and-dry models.</i></span>
+        </span>
+        <span class="tile__art"><img src="image.png" alt="Eureka Forbes wet-and-dry vacuum cleaner at Urban Pure, Newtown" loading="lazy" decoding="async"></span>
+        <span class="tile__go">Enquire <span aria-hidden="true">→</span></span>
+      </a>
+
+      <a class="tile" href="https://wa.me/918431194198?text=Hi%20Zolilo%2C%20Urban%20Pure%20here.%20I%20am%20interested%20in%20the%20website." target="_blank" rel="noopener">
+        <span class="tile__top">
+          <span class="tile__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zm0 2a7 7 0 1 1 0 14 7 7 0 0 1 0-14z"/><path d="M12 9a3 3 0 1 1 0 6 3 3 0 0 1 0-6z"/></svg></span>
+          <span class="tile__name"><b>Robot vacuum</b><i>Smart cleaning, zero effort.</i></span>
+        </span>
+        <span class="tile__art"><img src="assets/img/robotic-vacuum.png" alt="Robot vacuum at Urban Pure, Newtown" loading="lazy" decoding="async"></span>
+        <span class="tile__go">Enquire <span aria-hidden="true">→</span></span>
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- Services ------------------------------------------------------------- -->
+  <section class="sec" id="services">
+    <p class="eyebrow">Our Services</p>
+    <h2 class="sec__title">Everything we handle <span class="accent">in store</span></h2>
+    <p class="services__lede">
+      Sales, installation and after-sales support for all your home and kitchen
+      appliances.
+    </p>
+
+    <div class="scards">
+
+      <article class="scard">
+        <div class="scard__top">
+          <span class="scard__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5c3.5 4.5 5.5 7.2 5.5 9.5a5.5 5.5 0 0 1-11 0c0-2.3 2-5 5.5-9.5z"/></svg></span>
+          <h3>Aquaguard Water Purifier: Sales &amp; Installation</h3>
+        </div>
+        <p>Authorised sale and installation of the complete Eureka Forbes Aquaguard
+          range including RO, UV, RO+UV and smart purifiers. Best pricing guaranteed
+          with genuine warranty.</p>
+        <a class="scard__go" href="https://wa.me/918431194198?text=Hi%20Zolilo%2C%20Urban%20Pure%20here.%20I%20am%20interested%20in%20the%20website." target="_blank" rel="noopener">Learn more <span aria-hidden="true">→</span></a>
+      </article>
+
+      <article class="scard">
+        <div class="scard__top">
+          <span class="scard__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5.4c0 4.2-3 7.6-7 8.6-4-1-7-4.4-7-8.6V6z"/><path d="M9 12.2l2.1 2.1 4-4"/></svg></span>
+          <h3>Water Purifier AMC &amp; Service</h3>
+        </div>
+        <p>Annual Maintenance Contracts and on-demand service for all Eureka Forbes
+          Aquaguard models. Quick response, original spare parts, certified
+          technicians.</p>
+        <a class="scard__go" href="https://wa.me/918431194198?text=Hi%20Zolilo%2C%20Urban%20Pure%20here.%20I%20am%20interested%20in%20the%20website." target="_blank" rel="noopener">Learn more <span aria-hidden="true">→</span></a>
+      </article>
+
+      <article class="scard">
+        <div class="scard__top">
+          <span class="scard__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 3.6c2 2.6 3.1 4.2 3.1 5.4a3.1 3.1 0 0 1-6.2 0c0-1.2 1.1-2.8 3.1-5.4z"/><path d="M16.2 6.8c1.4 1.9 2.2 3 2.2 3.9a2.2 2.2 0 0 1-4.4 0c0-.9.8-2 2.2-3.9z"/><circle cx="7" cy="18.6" r="1.3"/><circle cx="12" cy="18.6" r="1.3"/><circle cx="17" cy="18.6" r="1.3"/></svg></span>
+          <h3>Water Softener: Sales &amp; Installation</h3>
+        </div>
+        <p>Eureka Forbes water softeners for hard-water areas. Ideal for Newtown and
+          Kolkata households. Installation and after-sales support included.</p>
+        <a class="scard__go" href="https://wa.me/918431194198?text=Hi%20Zolilo%2C%20Urban%20Pure%20here.%20I%20am%20interested%20in%20the%20website." target="_blank" rel="noopener">Learn more <span aria-hidden="true">→</span></a>
+      </article>
+
+      <article class="scard">
+        <div class="scard__top">
+          <span class="scard__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8h9.5a2.5 2.5 0 1 0-2.5-2.5"/><path d="M3 12h13a2.5 2.5 0 1 1-2.5 2.5"/><path d="M3 16h7.5a2 2 0 1 1-2 2"/></svg></span>
+          <h3>Air Purifier</h3>
+        </div>
+        <p>Full range of Eureka Forbes air purifiers for homes and offices. Handles
+          PM2.5, allergens and odours. Covers Newtown, Rajarhat and surrounding
+          Kolkata areas.</p>
+        <a class="scard__go" href="https://wa.me/918431194198?text=Hi%20Zolilo%2C%20Urban%20Pure%20here.%20I%20am%20interested%20in%20the%20website." target="_blank" rel="noopener">Learn more <span aria-hidden="true">→</span></a>
+      </article>
+
+      <article class="scard">
+        <div class="scard__top">
+          <span class="scard__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11l3.5-5.2h9L20 11z"/><path d="M6.2 11v3.6h11.6V11"/><path d="M9.5 17.6h5"/></svg></span>
+          <h3>Kitchen Chimney: Sales &amp; Installation</h3>
+        </div>
+        <p>Eureka Forbes kitchen chimneys with auto-clean technology. Professional
+          installation by authorised technicians. Best prices in Newtown, Kolkata.</p>
+        <a class="scard__go" href="https://wa.me/918431194198?text=Hi%20Zolilo%2C%20Urban%20Pure%20here.%20I%20am%20interested%20in%20the%20website." target="_blank" rel="noopener">Learn more <span aria-hidden="true">→</span></a>
+      </article>
+
+      <article class="scard">
+        <div class="scard__top">
+          <span class="scard__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.6"/><path d="M12 3.2v3M12 17.8v3M3.2 12h3M17.8 12h3M5.8 5.8l2.1 2.1M16.1 16.1l2.1 2.1M18.2 5.8l-2.1 2.1M7.9 16.1l-2.1 2.1"/></svg></span>
+          <h3>Gas Stove</h3>
+        </div>
+        <p>Eureka Forbes gas stoves in 2-burner, 3-burner and glass-top models. In-store
+          demo available at Downtown Mall, Uniworld City.</p>
+        <a class="scard__go" href="https://wa.me/918431194198?text=Hi%20Zolilo%2C%20Urban%20Pure%20here.%20I%20am%20interested%20in%20the%20website." target="_blank" rel="noopener">Learn more <span aria-hidden="true">→</span></a>
+      </article>
+
+      <article class="scard">
+        <div class="scard__top">
+          <span class="scard__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4.2" y="3.5" width="15.6" height="17" rx="2.4"/><path d="M4.2 8.4h15.6"/><circle cx="12" cy="14.6" r="3.4"/><path d="M7 5.9h1.6"/></svg></span>
+          <h3>Dishwasher: Sales &amp; Installation</h3>
+        </div>
+        <p>Eureka Forbes dishwashers for modern Kolkata homes. Capacity options from 6
+          to 14 place settings. Installation and demo at no extra cost.</p>
+        <a class="scard__go" href="https://wa.me/918431194198?text=Hi%20Zolilo%2C%20Urban%20Pure%20here.%20I%20am%20interested%20in%20the%20website." target="_blank" rel="noopener">Learn more <span aria-hidden="true">→</span></a>
+      </article>
+
+      <article class="scard">
+        <div class="scard__top">
+          <span class="scard__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.4"/><circle cx="12" cy="12" r="2.6"/><circle cx="12" cy="6.5" r=".9"/><circle cx="17.5" cy="12" r=".9"/><circle cx="6.5" cy="12" r=".9"/></svg></span>
+          <h3>Robo Vac: Robotic Vacuum Cleaner</h3>
+        </div>
+        <p>Smart robotic vacuum cleaners for automated home cleaning. Ideal for busy
+          households. In-store demo available.</p>
+        <a class="scard__go" href="https://wa.me/918431194198?text=Hi%20Zolilo%2C%20Urban%20Pure%20here.%20I%20am%20interested%20in%20the%20website." target="_blank" rel="noopener">Learn more <span aria-hidden="true">→</span></a>
+      </article>
+
+      <article class="scard">
+        <div class="scard__top">
+          <span class="scard__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.4 20.4h5.2l-1-8.9h-3.2z"/><path d="M12 11.5V8.2a3.6 3.6 0 0 1 3.6-3.6h.9"/><circle cx="18.2" cy="4.6" r="1.7"/></svg></span>
+          <h3>Vacuum Cleaner</h3>
+        </div>
+        <p>Eureka Forbes vacuum cleaners including wet-and-dry, cordless and handheld
+          models. Best pricing available at our Newtown showroom.</p>
+        <a class="scard__go" href="https://wa.me/918431194198?text=Hi%20Zolilo%2C%20Urban%20Pure%20here.%20I%20am%20interested%20in%20the%20website." target="_blank" rel="noopener">Learn more <span aria-hidden="true">→</span></a>
+      </article>
+
+      <article class="scard">
+        <div class="scard__top">
+          <span class="scard__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.4 9.6h15.2v10.2H4.4z"/><path d="M3.4 9.6L5.2 4.6h13.6l1.8 5"/><path d="M9.6 19.8v-5.2h4.8v5.2"/></svg></span>
+          <h3>Home Appliance Demo &amp; Consultation</h3>
+        </div>
+        <p>Free in-store product demonstrations and expert consultation to help you
+          choose the right appliance for your home.</p>
+        <a class="scard__go" href="https://wa.me/918431194198?text=Hi%20Zolilo%2C%20Urban%20Pure%20here.%20I%20am%20interested%20in%20the%20website." target="_blank" rel="noopener">Learn more <span aria-hidden="true">→</span></a>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- How it works -------------------------------------------------------- -->
+  <section class="sec" id="how">
+    <p class="eyebrow">How It Works</p>
+    <div class="how">
+      <div class="how__copy">
+        <h2 class="sec__title">What actually happens to&nbsp;it.</h2>
+        <p class="sec__note">
+          A purifier is a stack of stages, and you pay for every one you fit. Knowing
+          what each does is the difference between buying the right machine and buying
+          the biggest one on the shelf.
+        </p>
+        <p class="how__aside">
+          Not every home needs all five. Newtown gets a mix of treated supply and
+          borewell. Bring a bottle of your tap water and we will read its TDS with you.
+        </p>
+        <a class="btn btn--blue btn--lg" href="https://wa.me/918431194198?text=Hi%20Zolilo%2C%20Urban%20Pure%20here.%20I%20am%20interested%20in%20the%20website." target="_blank" rel="noopener">Ask for a water check <span aria-hidden="true">→</span></a>
+      </div>
+
+      <div class="how__panel">
+        <div class="stack" id="stack">
+          <div class="stage" data-stage="0">
+            <span class="cart cart--sediment" aria-hidden="true"></span>
+            <p class="stage__n">01</p>
+            <h3>Sediment</h3>
+            <p>Traps sand, silt and rust from the tank and the pipes.</p>
+          </div>
+          <div class="stage" data-stage="1">
+            <span class="cart cart--carbon" aria-hidden="true"></span>
+            <p class="stage__n">02</p>
+            <h3>Activated Carbon</h3>
+            <p>Absorbs chlorine, odour and the taste that comes with it.</p>
+          </div>
+          <div class="stage" data-stage="2">
+            <span class="cart cart--ro" aria-hidden="true"></span>
+            <p class="stage__n">03</p>
+            <h3>RO Membrane</h3>
+            <p>Removes dissolved salts, hardness and heavy metals.</p>
+          </div>
+          <div class="stage" data-stage="3">
+            <span class="cart cart--uv" aria-hidden="true"></span>
+            <p class="stage__n">04</p>
+            <h3>UV</h3>
+            <p>Kills bacteria and viruses on the way out of the tap.</p>
+          </div>
+          <div class="stage" data-stage="4">
+            <span class="cart cart--mineral" aria-hidden="true"></span>
+            <p class="stage__n">05</p>
+            <h3>Mineral Booster</h3>
+            <p>Puts back calcium and magnesium that RO strips out.</p>
+          </div>
+          <div class="stage stage--glass">
+            <span class="glass" aria-hidden="true"><i></i></span>
+            <p class="stage__n">&nbsp;</p>
+            <h3>Your glass</h3>
+            <p>What the stack was for.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why us -------------------------------------------------------------- -->
+  <section class="sec" id="why">
+    <p class="eyebrow">Why Buy Here</p>
+    <div class="sec__head">
+      <h2 class="sec__title">The purifier is the easy&nbsp;part.</h2>
+
+    </div>
+
+    <div class="grid grid--4" id="reason-grid">
+      <article class="rcard">
+        <span class="rcard__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l8 4v6c0 5-3.4 8.7-8 10-4.6-1.3-8-5-8-10V6z"/></svg></span>
+        <h3>A real Premium Partner</h3>
+        <p>Eureka Forbes appoints these directly. Your warranty is registered with the
+          company against your machine, not held together by a shop that may not be
+          there next year.</p>
+      </article>
+      <article class="rcard">
+        <span class="rcard__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 2h2v6h-2zM4.2 5.6l1.4-1.4 4.3 4.3-1.5 1.4zM2 11h6v2H2zM18.4 4.2l1.4 1.4-4.3 4.3-1.4-1.5zM16 11h6v2h-6zM11 16h2v6h-2z"/></svg></span>
+        <h3>Fitted properly, once</h3>
+        <p>Wall, inlet pressure, drain line, TDS at your tap. A purifier installed badly
+          fails early, and that is when the warranty argument starts. We would rather
+          spend the extra half hour.</p>
+      </article>
+      <article class="rcard">
+        <span class="rcard__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4V1L8 5l4 4V6a6 6 0 1 1-6 6H4a8 8 0 1 0 8-8z"/></svg></span>
+        <h3>Filters run out</h3>
+        <p>Cartridges expire, membranes wear, the UV lamp has a life. Service is not an
+          afterthought here. For most customers it is the entire reason they bought
+          from a dealer instead of a website.</p>
+      </article>
+      <article class="rcard">
+        <span class="rcard__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11 11 0 0 0 3.5.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11 11 0 0 0 .56 3.5 1 1 0 0 1-.25 1z"/></svg></span>
+        <h3>One number, always</h3>
+        <p>+91 91470 97231 reaches the shop that sold you the machine. No ticket number,
+          no queue, no being handed between departments.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- CTA banner ---------------------------------------------------------- -->
+  <section class="sec sec--tight">
+    <div class="cta">
+      <div>
+        <h2>Not sure which purifier is right for you?</h2>
+        <p>Bring a bottle of your tap water to the shop. We will read its TDS with you
+          and tell you which stages you actually need.</p>
+      </div>
+      <div class="cta__actions">
+        <a class="btn btn--wa btn--lg" href="https://wa.me/918431194198?text=Hi%20Zolilo%2C%20Urban%20Pure%20here.%20I%20am%20interested%20in%20the%20website." target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.7 15L2 22l5.2-1.3A10 10 0 1 0 12 2zm5.5 14.1c-.2.6-1.2 1.2-1.7 1.2-.5.1-1 .1-1.6-.1-.4-.1-.9-.3-1.5-.6a11 11 0 0 1-4.3-4.3c-.4-.7-.7-1.4-.7-2 0-.7.3-1.3.7-1.6.2-.2.4-.3.6-.3h.5c.2 0 .4 0 .6.4l.7 1.7c.1.2 0 .4-.1.5l-.3.4-.3.3c-.1.1-.2.2-.1.5.2.3.7 1.2 1.5 1.9 1 .9 1.8 1.1 2 1.2.3.1.4.1.6-.1l.7-.8c.2-.2.3-.2.6-.1l1.6.8c.3.1.4.2.5.3.1.3 0 .8-.1 1.1z"/></svg>
+          Chat on WhatsApp
+        </a>
+        <a class="btn btn--blue btn--lg" href="tel:+919147097231">Call Us Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Visit --------------------------------------------------------------- -->
+  <section class="sec" id="visit">
+    <div class="visit">
+      <div class="visit__info">
+        <div class="visit__head">
+          <p class="eyebrow">Store Location</p>
+          <h2 class="sec__title">The shop is the whole&nbsp;point.</h2>
+        </div>
+
+        <dl class="visit__details">
+          <div>
+            <dt>Address</dt>
+            <dd>Urban Pure<br>1st Floor, Block B, Downtown Mall, G46,<br>Uniworld City, Newtown, Kolkata 700160</dd>
+          </div>
+          <div>
+            <dt>Open</dt>
+            <dd>Monday to Sunday<br>Open daily till 7:00 PM</dd>
+          </div>
+          <div>
+            <dt>Phone</dt>
+            <dd><a class="link" href="tel:+919147097231">+91 91470 97231</a></dd>
+          </div>
+          <div>
+            <dt>Google rating</dt>
+            <dd><b class="big">5.0</b></dd>
+          </div>
+        </dl>
+
+        <!-- <div class="visit__actions">
+          <a class="btn btn--blue btn--lg" href="https://maps.app.goo.gl/MQSacvkGkfAN4NeKA" target="_blank" rel="noopener">Open in Google Maps</a>
+          <a class="btn btn--outline btn--lg" href="tel:+919147097231">Call the shop</a>
+          <a class="btn btn--outline btn--lg" href="https://wa.me/918431194198?text=Hi%20Zolilo%2C%20Urban%20Pure%20here.%20I%20am%20interested%20in%20the%20website." target="_blank" rel="noopener">Message on WhatsApp</a>
+        </div> -->
+      </div>
+
+      <!--
+        Live Google Maps embed, keyless classic form. The query must be fully
+        URL-encoded. An earlier version passed the listing's raw name with
+        brackets plus an ftid, and Google silently fell back to an empty map.
+        Keep it to one encoded q= string.
+        Shop is at 22.5595367, 88.4951943 (from maps.app.goo.gl/MQSacvkGkfAN4NeKA)
+        if this ever needs pinning by coordinate instead.
+        loading="lazy" keeps the map off the critical path.
+      -->
+      <div class="visit__map">
+        <iframe
+          title="Urban Pure on Google Maps, 1st Floor, Block B, Downtown Mall, Uniworld City, Newtown, Kolkata 700160"
+          src="https://www.google.com/maps?q=Urban%20Pure%20Eureka%20Forbes%20Premium%20Partner%2C%20Downtown%20Mall%2C%20Uniworld%20City%2C%20Newtown%2C%20Kolkata%20700160&amp;z=16&amp;hl=en&amp;output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="foot__grid">
+    <div class="foot__brand">
+      <a class="brand" href="#top">
+        <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3c5 7 8 11 8 15a8 8 0 0 1-16 0c0-4 3-8 8-15z"/></svg>
+        <span class="brand__name">Urban <b>Pure</b></span>
+      </a>
+      <p>Premium Partner and Authorised Dealer of Eureka Forbes, an Aquaguard
+        Company. Water purifiers and home appliances, sold, fitted and looked after
+        from one shop in Newtown.</p>
+    </div>
+
+    <div>
+      <h4>Quick Links</h4>
+      <a href="#products">Products</a>
+      <a href="#services">Services</a>
+      <a href="#why">Why Us</a>
+      <a href="#how">How It Works</a>
+      <a href="#visit">Store Location</a>
+    </div>
+
+    <div>
+      <h4>Our Products</h4>
+      <a href="#products">Aquaguard purifiers</a>
+      <a href="#products">AMC &amp; service</a>
+      <a href="#products">Water softeners</a>
+      <a href="#products">Air purifiers</a>
+      <a href="#products">Kitchen chimneys</a>
+      <a href="#products">Gas stoves &amp; dishwashers</a>
+      <a href="#products">Vacuum &amp; robot vacuums</a>
+    </div>
+
+    <div>
+      <h4>Store Location</h4>
+      <p>Urban Pure<br>1st Floor, Block B, Downtown Mall, G46,<br>Uniworld City, Newtown,<br>Kolkata 700160</p>
+      <p>Open daily<br>till 7:00 PM</p>
+    </div>
+
+    <div>
+      <h4>Contact Us</h4>
+      <a href="tel:+919147097231">+91 91470 97231</a>
+      <a href="https://wa.me/918431194198?text=Hi%20Zolilo%2C%20Urban%20Pure%20here.%20I%20am%20interested%20in%20the%20website." target="_blank" rel="noopener">WhatsApp us</a>
+      <a href="https://maps.app.goo.gl/MQSacvkGkfAN4NeKA" target="_blank" rel="noopener">Find us on Maps</a>
+    </div>
+  </div>
+
+  <div class="foot__bar">
+    <p>&copy; 2026 Urban Pure. All rights reserved.</p>
+    <p>Aquaguard and Eureka Forbes are trademarks of their respective owners.
+      Urban Pure is an appointed partner, not the manufacturer.</p>
+  </div>
+</footer>
+
+<!--
+  TODO: worth adding once confirmed. Deliberately absent because none of it is
+  verified, and unverified claims are the fastest way to lose the trust this page
+  is built to earn:
+    · prices or "starting from" figures for any category
+    · customer review quotes (pull real ones from the Google listing)
+    · years in business, number of installations, families served
+    · free water testing, home demo, AMC plan details
+    · brands stocked beyond Eureka Forbes / Aquaguard
+-->
+
+<script src="js/caustics.js" defer></script>
+<script src="js/main.js" defer></script>
+</body>
+</html>

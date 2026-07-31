@@ -1,0 +1,17 @@
+# Screenshot tooling (Chrome user-data dir — large, machine-local)
+.shot/
+
+# Stray screenshot artifacts
+*.html.png
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Node (in case a build step is added later)
+node_modules/
+npm-debug.log*
+
+# Netlify CLI
+.netlify/

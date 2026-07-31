@@ -1,0 +1,65 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e ' *)",
+      "Bash(claude plugin *)",
+      "PowerShell(\\(Get-Command claude -ErrorAction SilentlyContinue\\).Source)",
+      "PowerShell($p = @\\(\"$env:USERPROFILE\\\\.local\\\\bin\\\\claude.exe\",\"$env:USERPROFILE\\\\.local\\\\bin\\\\claude\",\"$env:APPDATA\\\\npm\\\\claude.cmd\",\"$env:LOCALAPPDATA\\\\Programs\\\\claude\\\\claude.exe\"\\); foreach\\($x in $p\\){ if\\(Test-Path $x\\){ \"FOUND: $x\" } else { \"miss: $x\" } })",
+      "PowerShell(git ls-remote https://github.com/anthropics/skills.git HEAD 2>&1)",
+      "PowerShell(git ls-remote https://github.com/anthropics/claude-code.git HEAD 2>&1)",
+      "PowerShell(\"=== marketplace? ===\")",
+      "PowerShell(try { \\(Invoke-RestMethod \"https://api.github.com/repos/anthropics/skills/contents/\" -Headers @{ \"User-Agent\"=\"claude\" }\\) | Where-Object { $_.type -eq \"dir\" } | Select-Object -ExpandProperty name } catch { \"ERR: $_\" })",
+      "PowerShell($tmp = \"C:\\\\Users\\\\KAAMRAN\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\e--ZOLILO-urban-pure\\\\c9a2983b-409f-4efc-8770-f64909e03c8e\\\\scratchpad\\\\skills-repo\"; git -C $tmp sparse-checkout set skills/frontend-design; Get-ChildItem -Recurse \"$tmp\\\\skills\\\\frontend-design\" | Select-Object @{n='Rel';e={$_.FullName.Substring\\($tmp.Length+1\\)}}, Length)",
+      "PowerShell(try { $r = Invoke-RestMethod \"https://api.github.com/repos/nextlevelbuilder/ui-ux-pro-max-skill\" -Headers @{ \"User-Agent\"=\"claude\" }; \"full_name: $\\($r.full_name\\)\"; \"default_branch: $\\($r.default_branch\\)\"; \"desc: $\\($r.description\\)\"; \"stars: $\\($r.stargazers_count\\)\" } catch { \"ERR: $_\" })",
+      "PowerShell(try { \\(Invoke-RestMethod \"https://api.github.com/repos/nextlevelbuilder/ui-ux-pro-max-skill/contents/\" -Headers @{ \"User-Agent\"=\"claude\" }\\) | Select-Object type, name, size } catch { \"ERR: $_\" })",
+      "PowerShell($h=@{ \"User-Agent\"=\"claude\" }; \"=== .claude-plugin ===\"; try { \\(Invoke-RestMethod \"https://api.github.com/repos/nextlevelbuilder/ui-ux-pro-max-skill/contents/.claude-plugin\" -Headers $h\\) | Select-Object type,name,size } catch { \"ERR: $_\" }; \"=== .claude ===\"; try { \\(Invoke-RestMethod \"https://api.github.com/repos/nextlevelbuilder/ui-ux-pro-max-skill/contents/.claude\" -Headers $h\\) | Select-Object type,name,size } catch { \"ERR: $_\" }; \"=== skill.json ===\"; try { \\(Invoke-WebRequest \"https://raw.githubusercontent.com/nextlevelbuilder/ui-ux-pro-max-skill/main/skill.json\" -Headers $h\\).Content } catch { \"ERR: $_\" })",
+      "PowerShell($h=@{ \"User-Agent\"=\"claude\" }; \"=== plugin.json ===\"; \\(Invoke-RestMethod \"https://raw.githubusercontent.com/nextlevelbuilder/ui-ux-pro-max-skill/main/.claude-plugin/plugin.json\" -Headers $h\\) | ConvertTo-Json -Depth 6; \"=== marketplace.json ===\"; \\(Invoke-RestMethod \"https://raw.githubusercontent.com/nextlevelbuilder/ui-ux-pro-max-skill/main/.claude-plugin/marketplace.json\" -Headers $h\\) | ConvertTo-Json -Depth 6; \"=== .claude/skills ===\"; \\(Invoke-RestMethod \"https://api.github.com/repos/nextlevelbuilder/ui-ux-pro-max-skill/contents/.claude/skills\" -Headers $h\\) | Select-Object type,name)",
+      "PowerShell($h=@{ \"User-Agent\"=\"claude\" }; \\(Invoke-RestMethod \"https://raw.githubusercontent.com/nextlevelbuilder/ui-ux-pro-max-skill/main/.claude/skills/ui-ux-pro-max/SKILL.md\" -Headers $h\\) -split \"`n\" | Select-Object -First 60)",
+      "Skill(update-config)",
+      "Skill(update-config:*)",
+      "WebFetch(domain:maps.app.goo.gl)",
+      "PowerShell(gh --version)",
+      "PowerShell(node --version)",
+      "PowerShell(npm --version)",
+      "PowerShell(gh auth status)",
+      "PowerShell(git config --global user.name)",
+      "PowerShell(git config --global user.email)",
+      "PowerShell(git init -b main)",
+      "PowerShell(git add -A)"
+    ],
+    "deny": [
+      "Read(//e/ZOLILO CODES/**)",
+      "Edit(//e/ZOLILO CODES/**)",
+      "Write(//e/ZOLILO CODES/**)",
+      "Read(//c/Users/KAAMRAN/.claude/**)",
+      "Edit(//c/Users/KAAMRAN/.claude/**)",
+      "Write(//c/Users/KAAMRAN/.claude/**)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Read|Write|Edit|NotebookEdit|Glob|Grep|Bash|PowerShell",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PROJECT_DIR:-e:/ZOLILO/urban pure}/.claude/hooks/guard-path.js\"",
+            "timeout": 10,
+            "statusMessage": "Checking path scope"
+          }
+        ]
+      }
+    ]
+  },
+  "enabledPlugins": {
+    "ui-ux-pro-max@ui-ux-pro-max-skill": true
+  },
+  "extraKnownMarketplaces": {
+    "ui-ux-pro-max-skill": {
+      "source": {
+        "source": "github",
+        "repo": "nextlevelbuilder/ui-ux-pro-max-skill"
+      }
+    }
+  }
+}
