@@ -11,23 +11,22 @@
     X-Frame-Options = "SAMEORIGIN"
     Referrer-Policy = "strict-origin-when-cross-origin"
 
-# Long-cache the immutable-ish assets; HTML stays revalidated by default.
-[[headers]]
-  for = "/css/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000"
-
-[[headers]]
-  for = "/js/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000"
-
+# No long-lived Cache-Control anywhere. Nothing here is content-hashed —
+# styles.css keeps its name across every deploy — so a far-future max-age
+# pins the old file in visitors' browsers until it expires, and a redeploy
+# cannot dislodge it. Netlify's default (max-age=0, must-revalidate, plus an
+# ETag served from its CDN) makes each deploy take effect immediately while
+# still costing only a 304 on unchanged files.
+#
+# Images are large but rarely change; a day is short enough that replacing one
+# is visible by tomorrow, long enough to skip the revalidation on repeat views
+# within a session.
 [[headers]]
   for = "/images/*"
   [headers.values]
-    Cache-Control = "public, max-age=31536000"
+    Cache-Control = "public, max-age=86400, must-revalidate"
 
 [[headers]]
   for = "/assets/*"
   [headers.values]
-    Cache-Control = "public, max-age=31536000"
+    Cache-Control = "public, max-age=86400, must-revalidate"

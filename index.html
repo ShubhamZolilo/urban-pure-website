@@ -11,7 +11,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="css/styles.css">
+<!-- ?v= is a cache buster. An earlier deploy served these with a one-year
+     max-age, so any browser that visited then has the old file pinned and will
+     not re-request it. Changing the URL is the only way to reach those. Bump
+     the number if it ever happens again. -->
+<link rel="stylesheet" href="css/styles.css?v=2">
 </head>
 
 <body>
@@ -437,7 +441,7 @@
     · brands stocked beyond Eureka Forbes / Aquaguard
 -->
 
-<script src="js/caustics.js" defer></script>
-<script src="js/main.js" defer></script>
+<script src="js/caustics.js?v=2" defer></script>
+<script src="js/main.js?v=2" defer></script>
 </body>
 </html>
